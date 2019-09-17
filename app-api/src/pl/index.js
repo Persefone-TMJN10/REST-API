@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 
 /* ROUTER MODULES */
 import routerMain from './routers/router-main'
+import routerSession from './routers/router-session'
 
 /* APPLICATION */
 const app = express()
@@ -26,6 +27,7 @@ app.use(bodyParser.json())
 
 /* ROUTING */
 app.use('/', routerMain)
+app.use('/session', routerSession)
 
 /* 404 RESPONSE */
 app.use((req, res) => {
