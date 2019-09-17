@@ -2,7 +2,7 @@
 import mysql from 'mysql'
 
 const MYSQL_OPTIONS = {
-    host: 'mysql-db',
+    host: 'db-mysql',
     user: 'root',
     password: process.env.MYSQL_ROOT_PASSWORD,
     database: process.env.MYSQL_DATABASE,

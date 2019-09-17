@@ -4,3 +4,7 @@ CREATE TABLE IF NOT EXISTS session (
     outTime DATETIME DEFAULT NULL,
     PRIMARY KEY (id)
 );
+
+INSERT INTO session (inTime, outTime) VALUES ("2019-09-20 13:13:00", "2019-09-20 15:32:51");
+
+INSERT INTO session (inTime) VALUES ("2019-09-20 13:15:00");
