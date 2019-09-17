@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS session (
+    id INT AUTO_INCREMENT NOT NULL,
+    inTime TIMESTAMP NOT NULL,
+    outTime TIMESTAMP,
+    PRIMARY KEY (id)
+);
