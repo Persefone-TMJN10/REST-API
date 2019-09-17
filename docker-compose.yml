@@ -11,3 +11,12 @@ services:
       - "./app-api/src:/app-api/src"
     env_file:
       - ".env"
+  db-mysql:
+    build:
+      context: "./db-mysql"
+      dockerfile: "Dockerfile"
+    container_name: "db-mysql"
+    ports: 
+      - "${PORT_MYSQL}:${PORT_MYSQL}"
+    env_file:
+      - ".env"
