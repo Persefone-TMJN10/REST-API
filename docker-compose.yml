@@ -3,7 +3,7 @@ services:
   app-api:
     build:
       context: "./app-api"
-      dockerfile: "Dockerfile"
+      dockerfile: "./${NODE_ENV}/Dockerfile"
     container_name: "app-api"
     ports: 
       - "${PORT_API}:${PORT_API}"

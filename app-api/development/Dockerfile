@@ -4,6 +4,8 @@ WORKDIR /app-api
 
 COPY package*.json ./
 
+COPY webpack.config.js ./
+
 RUN npm install
 
-CMD ["npm", "run", "start"] 
+CMD ["npm", "run", "dev"] 
