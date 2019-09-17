@@ -7,5 +7,10 @@
     "start": "node ./src/pl/index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "terser-webpack-plugin": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-node-externals": "^1.7.2"
+  }
 }
