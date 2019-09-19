@@ -5,7 +5,3 @@ CREATE TABLE IF NOT EXISTS session (
     outTime DATETIME DEFAULT NULL,
     PRIMARY KEY (id)
 );
-
-INSERT INTO session (tagId, inTime, outTime) VALUES ("000000", "2019-09-20 13:13:00", "2019-09-20 15:32:51");
-
-INSERT INTO session (tagId, inTime) VALUES ("000001", "2019-09-20 13:15:00");
