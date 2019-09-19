@@ -2,8 +2,7 @@
 import express from 'express'
 
 /* MODULES */
-import { getAll, setAll, updateSession } from '../../bll/session/manager-session'
-import { selectAll } from '../../dal/repo-session'
+import { getAll, setAll, update } from '../../bll/session/manager-session'
 
 /* ROUTER INIT */
 const router = express.Router()
@@ -73,7 +72,7 @@ router.put('/', (req, res) => {
         message: 'OK'
     }
 
-    updateSession(session, (error) => {
+    update(session, (error) => {
         if (error) {
             resObj.status = 500
             resObj.message = 'Internal Server Error'
