@@ -19,9 +19,9 @@ export function selectAll(callback) {
 }
 
 export function insertAll(session, callback) {
-    
+
     const query = "INSERT INTO session (inTime, outTime) VALUES (?, ?)"
-    const values = []
+    const values = [session.inTime, session.outTime]
 
     db.query(query, values, (error) => {
 
