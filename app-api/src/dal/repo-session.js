@@ -17,3 +17,18 @@ export function selectAll(callback) {
     })
 
 }
+
+export function insertAll(session, callback) {
+    
+    const query = "INSERT INTO session (inTime, outTime) VALUES (?, ?)"
+    const values = []
+
+    db.query(query, values, (error) => {
+
+        if(error) {
+            callback(error.message)
+        } else {
+            callback(null)
+        }
+    })
+}

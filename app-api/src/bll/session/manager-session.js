@@ -1,4 +1,4 @@
-import { selectAll }  from '../../dal/repo-session'
+import { selectAll, insertAll }  from '../../dal/repo-session'
 
 export function getAll(callback) {
 
@@ -13,4 +13,16 @@ export function getAll(callback) {
 
     })
 
+}
+
+export function setAll(session, callback) {
+
+    insertAll(session, (error) => {
+
+        if (error) {
+            callback(error)
+        }
+
+        callback(null)
+    })
 }
