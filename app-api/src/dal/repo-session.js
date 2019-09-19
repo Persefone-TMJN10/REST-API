@@ -25,7 +25,22 @@ export function insertAll(session, callback) {
 
     db.query(query, values, (error) => {
 
-        if(error) {
+        if (error) {
+            callback(error.message)
+        } else {
+            callback(null)
+        }
+    })
+}
+
+export function updateSession(session, callback) {
+
+    const query = "UPDATE session SET outTime = ? WHERE inTime = ?"
+    const values = [session.outTime, session.inTime]
+
+    db.query(query, values, (error) => {
+
+        if (error) {
             callback(error.message)
         } else {
             callback(null)

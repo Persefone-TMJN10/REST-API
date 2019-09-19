@@ -2,7 +2,7 @@
 import express from 'express'
 
 /* MODULES */
-import { getAll, setAll } from '../../bll/session/manager-session'
+import { getAll, setAll, updateSession } from '../../bll/session/manager-session'
 import { selectAll } from '../../dal/repo-session'
 
 /* ROUTER INIT */
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 })
 
 /* POST-MIDDLEWARES */
-router.post('/',(req, res) => {
+router.post('/', (req, res) => {
 
     var session = {
         inTime: req.body.inTime,
@@ -58,5 +58,28 @@ router.post('/',(req, res) => {
     })
 })
 
+/* PUT-MIDDLEWARES */
+router.put('/', (req, res) => {
+
+    var session = {
+        inTime: req.body.inTime,
+        outTime: req.body.outTime
+    }
+
+    var resObj = {
+        status: 200,
+        message: 'OK'
+    }
+
+    updateSession(session, (error) => {
+        if (error) {
+            resObj.status = 500
+            resObj.message = 'Internal Server Error'
+            resObj.errorMessage = error
+        }
+
+        res.status(resObj.status).json(resObj)
+    })
+})
 /* EXPORT */
 export default router

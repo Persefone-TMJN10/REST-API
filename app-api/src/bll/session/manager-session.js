@@ -27,3 +27,16 @@ export function setAll(session, callback) {
         callback(null)
     })
 }
+
+export function updateSession(session, callback) {
+
+    updateSession(session, (error) => {
+
+        if (error) {
+            callback(error)
+            return
+        } 
+
+        callback(null)
+    })
+}
