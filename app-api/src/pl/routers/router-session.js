@@ -34,11 +34,11 @@ router.get('/', (req, res) => {
 })
 
 /* POST-MIDDLEWARES */
-router.get('/test',(req, res) => {
+router.post('/',(req, res) => {
 
     var session = {
-        inTime: req.query.inTime,
-        outTime: req.query.outTime
+        inTime: req.body.inTime,
+        outTime: req.body.outTime
     }
 
     var resObj = {

@@ -21,6 +21,7 @@ export function setAll(session, callback) {
 
         if (error) {
             callback(error)
+            return
         }
 
         callback(null)
