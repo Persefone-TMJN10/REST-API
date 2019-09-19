@@ -37,6 +37,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
     var session = {
+        tagId: req.body.tagId,
         inTime: req.body.inTime,
         outTime: req.body.outTime
     }
@@ -62,6 +63,7 @@ router.post('/', (req, res) => {
 router.put('/', (req, res) => {
 
     var session = {
+        tagId: req.body.tagId,
         inTime: req.body.inTime,
         outTime: req.body.outTime
     }

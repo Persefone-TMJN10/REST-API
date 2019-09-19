@@ -20,8 +20,8 @@ export function selectAll(callback) {
 
 export function insertAll(session, callback) {
 
-    const query = "INSERT INTO session (inTime, outTime) VALUES (?, ?)"
-    const values = [session.inTime, session.outTime]
+    const query = "INSERT INTO session (tagId, inTime, outTime) VALUES (?, ?, ?)"
+    const values = [session.tagId, session.inTime, session.outTime]
 
     db.query(query, values, (error) => {
 
@@ -35,8 +35,8 @@ export function insertAll(session, callback) {
 
 export function updateSession(session, callback) {
 
-    const query = "UPDATE session SET outTime = ? LIMIT 1"
-    const values = [session.outTime, session.inTime]
+    const query = "UPDATE session SET outTime = ? WHERE tagId = ?"
+    const values = [session.outTime, session.tagId]
 
     db.query(query, values, (error) => {
 

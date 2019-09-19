@@ -1,10 +1,11 @@
 CREATE TABLE IF NOT EXISTS session (
     id INT AUTO_INCREMENT NOT NULL,
+    tagId VARCHAR(255) UNIQUE NOT NULL, 
     inTime DATETIME NOT NULL,
     outTime DATETIME DEFAULT NULL,
     PRIMARY KEY (id)
 );
 
-INSERT INTO session (inTime, outTime) VALUES ("2019-09-20 13:13:00", "2019-09-20 15:32:51");
+INSERT INTO session (tagId, inTime, outTime) VALUES ("000000", "2019-09-20 13:13:00", "2019-09-20 15:32:51");
 
-INSERT INTO session (inTime) VALUES ("2019-09-20 13:15:00");
+INSERT INTO session (tagId, inTime) VALUES ("000001", "2019-09-20 13:15:00");
