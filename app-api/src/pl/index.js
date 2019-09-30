@@ -7,6 +7,7 @@ import routerMain from './routers/router-main'
 import routerSession from './routers/router-session'
 import routerRadiationLevelChange from './routers/router-radiation-level-change'
 import routerHazmatChange from './routers/router-hazmat-change'
+import routerRoomChange from './routers/router-room-change'
 
 /* APPLICATION */
 const app = express()
@@ -32,6 +33,7 @@ app.use('/', routerMain)
 app.use('/session', routerSession)
 app.use('/radiation-level-change', routerRadiationLevelChange)
 app.use('/hazmat-change', routerHazmatChange)
+app.use('/room-change', routerRoomChange)
 
 /* 404 RESPONSE */
 app.use((req, res) => {

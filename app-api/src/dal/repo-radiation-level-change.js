@@ -39,7 +39,7 @@ export function selectByTimeInterval(timestamps, callback) {
 
 export function insertAll(row, callback) {
 
-    const query = "INSERT INTO radiationLevelChange (level, time) VALUES (?, ?, ?)"
+    const query = "INSERT INTO radiationLevelChange (level, time) VALUES (?, ?)"
     const values = [row.level, row.time]
 
     db.query(query, values, (error) => {

@@ -21,3 +21,12 @@ CREATE TABLE IF NOT EXISTS hazmatChange (
     FOREIGN KEY (sessionId) REFERENCES session(id),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS roomChange (
+    id INT AUTO_INCREMENT NOT NULL,
+    sessionId INT NOT NULL,
+    roomId ENUM("0","1","2"),
+    time DATETIME NOT NULL,
+    FOREIGN KEY (sessionId) REFERENCES session(id),
+    PRIMARY KEY (id)
+);

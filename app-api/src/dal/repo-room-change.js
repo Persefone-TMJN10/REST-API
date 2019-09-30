@@ -39,8 +39,8 @@ export function selectBySessionId(id, callback) {
 
 export function insertAll(row, callback) {
 
-    const query = "INSERT INTO hazmatChange (sessionId, fromRoomId, toRoomId, time) VALUES (?, ?, ?, ?)"
-    const values = [row.sessionId, row.fromRoomId, row.toRoomId, row.time]
+    const query = "INSERT INTO hazmatChange (sessionId, roomId, time) VALUES (?, ?, ?)"
+    const values = [row.sessionId, row.roomId, row.time]
 
     db.query(query, values, (error) => {
 
