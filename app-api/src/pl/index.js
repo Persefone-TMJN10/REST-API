@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 /* ROUTER MODULES */
 import routerMain from './routers/router-main'
 import routerSession from './routers/router-session'
+import routerRadiationLevelChange from './routers/router-radiation-level-change'
 
 /* APPLICATION */
 const app = express()
@@ -28,6 +29,7 @@ app.use(bodyParser.json())
 /* ROUTING */
 app.use('/', routerMain)
 app.use('/session', routerSession)
+app.use('/radiation-level-change', routerRadiationLevelChange)
 
 /* 404 RESPONSE */
 app.use((req, res) => {

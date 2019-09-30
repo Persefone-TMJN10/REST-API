@@ -5,3 +5,10 @@ CREATE TABLE IF NOT EXISTS session (
     outTime DATETIME DEFAULT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS radiationLevelChange (
+    id INT AUTO_INCREMENT NOT NULL,
+    level INT NOT NULL,
+    time DATETIME NOT NULL,
+    PRIMARY KEY (id)
+);
