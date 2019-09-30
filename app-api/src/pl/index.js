@@ -6,6 +6,7 @@ import bodyParser from 'body-parser'
 import routerMain from './routers/router-main'
 import routerSession from './routers/router-session'
 import routerRadiationLevelChange from './routers/router-radiation-level-change'
+import routerHazmatChange from './routers/router-hazmat-change'
 
 /* APPLICATION */
 const app = express()
@@ -30,6 +31,7 @@ app.use(bodyParser.json())
 app.use('/', routerMain)
 app.use('/session', routerSession)
 app.use('/radiation-level-change', routerRadiationLevelChange)
+app.use('/hazmat-change', routerHazmatChange)
 
 /* 404 RESPONSE */
 app.use((req, res) => {

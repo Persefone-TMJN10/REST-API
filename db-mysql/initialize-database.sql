@@ -12,3 +12,12 @@ CREATE TABLE IF NOT EXISTS radiationLevelChange (
     time DATETIME NOT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS hazmatChange (
+    id INT AUTO_INCREMENT NOT NULL,
+    sessionId INT NOT NULL,
+    status BIT NOT NULL,
+    time DATETIME NOT NULL,
+    FOREIGN KEY (sessionId) REFERENCES session(id),
+    PRIMARY KEY (id)
+);
