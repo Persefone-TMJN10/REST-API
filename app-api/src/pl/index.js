@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 /* ROUTER MODULES */
 import routerMain from './routers/router-main'
 import routerSession from './routers/router-session'
+import routerStartEnvironment from './routers/router-start-environment'
 import routerRadiationLevelChange from './routers/router-radiation-level-change'
 import routerHazmatChange from './routers/router-hazmat-change'
 import routerRoomChange from './routers/router-room-change'
@@ -31,6 +32,7 @@ app.use(bodyParser.json())
 /* ROUTING */
 app.use('/', routerMain)
 app.use('/session', routerSession)
+app.use('/start-environment', routerStartEnvironment)
 app.use('/radiation-level-change', routerRadiationLevelChange)
 app.use('/hazmat-change', routerHazmatChange)
 app.use('/room-change', routerRoomChange)
