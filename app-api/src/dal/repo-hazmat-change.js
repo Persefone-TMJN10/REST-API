@@ -70,7 +70,7 @@ export function selectBySessionId(id, callback) {
 
 export function insertAll(row, callback) {
 
-    const query = "INSERT INTO hazmatChange (sessionId, status, time) VALUES (?, ?, ?)"
+    const query = "INSERT INTO hazmatChange (sessionId, status, time) VALUES (?, b?, ?)"
     const values = [row.sessionId, row.status, row.time]
 
     db.query(query, values, (error) => {
