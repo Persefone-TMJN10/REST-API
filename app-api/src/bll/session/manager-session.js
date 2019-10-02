@@ -17,14 +17,14 @@ export function getAll(callback) {
 
 export function setAll(session, callback) {
 
-    insertAll(session, (error) => {
+    insertAll(session, (error, insertId) => {
 
         if (error) {
-            callback(error)
+            callback(error, null)
             return
         }
 
-        callback(null)
+        callback(null, insertId)
     })
 }
 

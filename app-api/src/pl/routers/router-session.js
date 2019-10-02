@@ -46,13 +46,15 @@ router.post('/', (req, res) => {
         message: 'OK'
     }
 
-    setAll(session, (error) => {
+    setAll(session, (error, insertId) => {
 
         if (error) {
             resObj.status = 500
             resObj.message = 'Internal Server Error'
             resObj.errorMessage = error
         }
+
+        resObj.insertId = insertId
 
         res.status(resObj.status).json(resObj)
     })

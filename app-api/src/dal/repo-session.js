@@ -23,12 +23,12 @@ export function insertAll(session, callback) {
     const query = "INSERT INTO session (tagId, inTime, outTime) VALUES (?, ?, ?)"
     const values = [session.tagId, session.inTime, session.outTime]
 
-    db.query(query, values, (error) => {
+    db.query(query, values, (error, result) => {
 
         if (error) {
-            callback(error.message)
+            callback(error.message, null)
         } else {
-            callback(null)
+            callback(null, result.insertId)
         }
     })
 }
