@@ -47,7 +47,7 @@ export function selectBySessionId(id, callback) {
 
 export function insertAll(row, callback) {
 
-    const query = "INSERT INTO startEnvironment (sessionId, radiationLevel, hazmatStatus, roomId) VALUES (?, ?, ?, ?)"
+    const query = "INSERT INTO startEnvironment (sessionId, radiationLevel, hazmatStatus, roomId) VALUES (?, ?, b?, ?)"
     const values = [row.sessionId, row.radiationLevel, row.hazmatStatus, row.roomId]
 
     db.query(query, values, (error) => {
