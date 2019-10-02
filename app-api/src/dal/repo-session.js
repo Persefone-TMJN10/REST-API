@@ -36,7 +36,7 @@ export function insertAll(session, callback) {
 export function updateSession(session, callback) {
 
     const query = "UPDATE session SET outTime = ?, totalExposure = ? WHERE id = ?"
-    const values = [session.outTime, session.totalExposure, session.tagId]
+    const values = [session.outTime, session.totalExposure, session.id]
 
     db.query(query, values, (error) => {
 

@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
 router.put('/', (req, res) => {
 
     var session = {
-        tagId: req.body.tagId,
+        id: req.body.id,
         inTime: req.body.inTime,
         outTime: req.body.outTime,
         totalExposure: req.body.totalExposure
