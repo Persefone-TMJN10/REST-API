@@ -64,7 +64,8 @@ router.put('/', (req, res) => {
     var session = {
         tagId: req.body.tagId,
         inTime: req.body.inTime,
-        outTime: req.body.outTime
+        outTime: req.body.outTime,
+        totalExposure: req.body.totalExposure
     }
 
     var resObj = {

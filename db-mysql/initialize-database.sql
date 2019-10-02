@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS session (
     tagId VARCHAR(255) NOT NULL, 
     inTime DATETIME NOT NULL,
     outTime DATETIME DEFAULT NULL,
+    totalExposure BIGINT(255) DEFAULT NULL,
     PRIMARY KEY (id)
 );
 
