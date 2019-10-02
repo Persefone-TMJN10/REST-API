@@ -63,8 +63,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
     var radiationLevelChange = {
-        startLevel: req.body.startLevel,
-        endLevel: req.body.endLevel,
+        level: req.body.level,
         time: req.body.time
     }
 
