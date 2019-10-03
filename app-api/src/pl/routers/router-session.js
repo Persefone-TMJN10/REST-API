@@ -2,7 +2,7 @@
 import express from 'express'
 
 /* MODULES */
-import { getAll, setAll, update } from '../../bll/session/manager-session'
+import { getAll, getByTagId, setAll, update } from '../../bll/session/manager-session'
 
 /* ROUTER INIT */
 const router = express.Router()
@@ -10,25 +10,47 @@ const router = express.Router()
 /* GET-MIDDLEWARES */
 router.get('/', (req, res) => {
 
-    getAll((error, data) => {
+    var resObj = {
+        status: 200,
+        message: 'OK'
+    }
 
-        var resObj = {
-            status: 200,
-            message: 'OK'
-        }
+    if(req.query.tagId) {
 
-        if(error){
-            resObj.status = 500
-            resObj.message = 'Internal Server Error'
-            resObj.errorMessage = error
-        }
-        else {
-            resObj.payload = data
-        }
+        getByTagId(req.query.tagId, (error, data) => {
 
-        res.status(resObj.status).json(resObj)
+            if(error){
+                resObj.status = 500
+                resObj.message = 'Internal Server Error'
+                resObj.errorMessage = error
+            }
+            else {
+                resObj.payload = data
+            }
 
-    })
+            res.status(resObj.status).json(resObj)
+
+        })
+
+    }
+    else {
+
+        getAll((error, data) => {
+    
+            if(error){
+                resObj.status = 500
+                resObj.message = 'Internal Server Error'
+                resObj.errorMessage = error
+            }
+            else {
+                resObj.payload = data
+            }
+
+            res.status(resObj.status).json(resObj)
+        
+        })
+
+    }
 
 })
 

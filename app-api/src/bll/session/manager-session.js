@@ -1,4 +1,4 @@
-import { selectAll, insertAll, updateSession }  from '../../dal/repo-session'
+import { selectAll, selectByTagId, insertAll, updateSession }  from '../../dal/repo-session'
 
 export function getAll(callback) {
 
@@ -10,6 +10,21 @@ export function getAll(callback) {
         }
 
         callback(null, data)
+
+    })
+
+}
+
+export function getByTagId(tagId, callback) {
+
+    selectByTagId(tagId, (error, data) => {
+
+        if(error) {
+            callback(error, null)
+        }
+        else {
+            callback(null, data)
+        }
 
     })
 

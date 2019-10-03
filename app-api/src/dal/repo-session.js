@@ -18,6 +18,23 @@ export function selectAll(callback) {
 
 }
 
+export function selectByTagId(tagId, callback) {
+
+    const query = "SELECT * FROM session WHERE tagId = ?"
+    const value = [tagId]
+
+    db.query(query, value, (error, result) => {
+
+        if(error) {
+            callback(error.message, null)
+        } else {
+            callback(null, result)
+        }
+
+    })
+
+} 
+
 export function insertAll(session, callback) {
 
     const query = "INSERT INTO session (tagId, inTime, outTime) VALUES (?, ?, ?)"
